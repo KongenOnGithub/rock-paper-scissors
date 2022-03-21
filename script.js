@@ -4,13 +4,22 @@ function computerPlay() {
 }
 
 function userSelect() {
+    let looping = true;
     let userSelection = prompt("Which one do you choose? rock paper or scissors");
-    userSelection = userSelection.toLowerCase;
+    userSelection = userSelection.toLowerCase();
+    console.log(userSelection);
+    console.log(looping);
+    if(userSelection==="rock" || userSelection==="paper" || userSelection==="scissors") {
+        looping = false;
+        console.log(looping);
+    }
 
-
-    while(userSelection!=="rock" && userSelection!=="paper" && userSelection!=="scissors"){
+    while(looping===true){
         userSelection = prompt("Try again, remember you can only choose between rock paper or scissors");
-        userSelection = userSelection.toLowerCase;
+        userSelection = userSelection.toLowerCase();
+        if (userSelection==="rock" || userSelection==="paper" || userSelection==="scissors") {
+            looping = false;
+        }
     }
 
     return userSelection;
